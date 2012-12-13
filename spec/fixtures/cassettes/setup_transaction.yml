@@ -1,0 +1,35 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.sisow.nl/Sisow/iDeal/RestHandler.ashx/TransactionRequest?amount=210&callbackurl=http://test.com/callback&description=Test%20description&entrancecode=1&issuerid=01&merchantid=12345&merchantkey=5a48c58eabfcb4c&notifyurl=http://test.com/notify&purchaseid=12345&returnurl=http://test.com/return&sha1=cfecd1fbb67fb1aa3422ef038047ce271c5fc01d&shopid=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - text/xml; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.0
+      X-Aspnet-Version:
+      - 2.0.50727
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Thu, 13 Dec 2012 19:38:59 GMT
+      Content-Length:
+      - '410'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><transactionrequest xmlns="https://www.sisow.nl/Sisow/REST"
+        version="1.0.0"><transaction><issuerurl>https%3a%2f%2fwww.abnamro.nl%2fnl%2fideal%2fidentification.do%3frandomizedstring%3d3722692644%26trxid%3d50001157723256</issuerurl><trxid>0050001157723256</trxid></transaction><signature><sha1>72b7abf1fca017f3729ae2033139da52231aa411</sha1></signature></transactionrequest>
+    http_version:
+  recorded_at: Thu, 13 Dec 2012 19:38:59 GMT
+recorded_with: VCR 2.3.0

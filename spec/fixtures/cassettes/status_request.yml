@@ -1,0 +1,37 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.sisow.nl/Sisow/iDeal/RestHandler.ashx/StatusRequest?merchantid=12345&merchantkey=5a48c58eabfcb4c&sha1=3ff9e82399fdaa16e8af4bb4cc97b2c4604d079a&shopid=1&trxid=0050001157723256
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - text/xml; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.0
+      X-Aspnet-Version:
+      - 2.0.50727
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Thu, 13 Dec 2012 19:52:10 GMT
+      Content-Length:
+      - '575'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><statusresponse xmlns="https://www.sisow.nl/Sisow/REST"
+        version="1.0.0"><transaction><trxid>0050001157723256</trxid><status>Open</status><amount>210</amount><purchaseid>12345</purchaseid><description>Test
+        description</description><entrancecode>1</entrancecode><issuerid>ABN Amro
+        Bank</issuerid><timestamp>2012-12-13 20:38:58Z</timestamp><consumername></consumername><consumeraccount></consumeraccount><consumercity></consumercity></transaction><signature><sha1>7f81002085f6023c069e0e9bc6456e0ee6148064</sha1></signature></statusresponse>
+    http_version:
+  recorded_at: Thu, 13 Dec 2012 19:52:11 GMT
+recorded_with: VCR 2.3.0

@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.sisow.nl/Sisow/iDeal/RestHandler.ashx/DirectoryRequest?merchantid=12345&merchantkey=5a48c58eabfcb4c
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - text/xml; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.0
+      X-Aspnet-Version:
+      - 2.0.50727
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Thu, 13 Dec 2012 19:29:04 GMT
+      Content-Length:
+      - '906'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><directoryresponse xmlns="https://www.sisow.nl/Sisow/REST"
+        version="1.0.0"><directory><issuer><issuerid>01</issuerid><issuername>ABN
+        Amro Bank</issuername></issuer><issuer><issuerid>02</issuerid><issuername>ASN
+        Bank</issuername></issuer><issuer><issuerid>04</issuerid><issuername>Friesland
+        Bank</issuername></issuer><issuer><issuerid>05</issuerid><issuername>ING</issuername></issuer><issuer><issuerid>06</issuerid><issuername>Rabobank</issuername></issuer><issuer><issuerid>07</issuerid><issuername>SNS
+        Bank</issuername></issuer><issuer><issuerid>08</issuerid><issuername>RegioBank</issuername></issuer><issuer><issuerid>09</issuerid><issuername>Triodos
+        Bank</issuername></issuer><issuer><issuerid>10</issuerid><issuername>Van Lanschot
+        Bankiers</issuername></issuer><issuer><issuerid>11</issuerid><issuername>Knab</issuername></issuer></directory></directoryresponse>
+    http_version:
+  recorded_at: Thu, 13 Dec 2012 19:29:05 GMT
+recorded_with: VCR 2.3.0

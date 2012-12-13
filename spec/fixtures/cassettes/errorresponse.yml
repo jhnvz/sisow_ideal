@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.sisow.nl/Sisow/iDeal/RestHandler.ashx/TransactionRequest?amount=210&callbackurl=http://test.com/callback&description=Test%20description&entrancecode=1&issuerid=01&merchantid=1&merchantkey=1&notifyurl=http://test.com/notify&purchaseid=12345&returnurl=http://test.com/return&sha1=650f930505007aef19c214f8f6b9f22370c6399b&shopid=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - text/xml; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.0
+      X-Aspnet-Version:
+      - 2.0.50727
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Thu, 13 Dec 2012 20:00:03 GMT
+      Content-Length:
+      - '216'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><errorresponse xmlns="https://www.sisow.nl/Sisow/REST"
+        version="1.0.0"><error><errorcode>TA3220</errorcode><errormessage>Merchant
+        not found</errormessage></error></errorresponse>
+    http_version:
+  recorded_at: Thu, 13 Dec 2012 20:00:04 GMT
+recorded_with: VCR 2.3.0
