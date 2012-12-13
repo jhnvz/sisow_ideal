@@ -59,4 +59,4 @@ order.update_attributes(:status => response.status)
 
 ## Copyright
 
-Copyright (c) 2010 Johan van Zonneveld. See LICENSE for details.
+Copyright (c) 2012 Johan van Zonneveld. See LICENSE for details.
