@@ -1,6 +1,6 @@
 ## Sisow iDeal [![Build Status](https://secure.travis-ci.org/jhnvz/sisow_ideal.png?branch=master)](http://travis-ci.org/jhnvz/sisow_ideal)
 
-Wrapper for the mollie ideal api
+Wrapper for the sisow ideal api
 
 Installation
 ------------
