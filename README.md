@@ -36,7 +36,7 @@ order.update_attributes(:trxid => response.trxid)
 redirect_to response.url
 
 # How to handle report on the report url
-# For safety reasons mollie calls a report url for updating payment status before redirecting back to the application
+# For safety reasons sisow calls a notify url for updating payment status before redirecting back to the application
 order = Order.find_by_trxid(params[:trxid])
 response = client.status_request(
   :trxid  => order.trxid,
@@ -44,7 +44,7 @@ response = client.status_request(
 )
 order.update_attributes(:status => response.status)
 
-# When mollie redirects the user back you can check if the payment was succesfull bij finding the order object
+# When sisow redirects the user back you can check if the payment was succesfull bij finding the order object
 @order = Order.find_by_trxid(params[:trxid])
 ```
 ## Note on Patches/Pull Requests
