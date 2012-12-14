@@ -17,7 +17,7 @@ module SisowIdeal
         :format => :xml
       ).parsed_response).directoryresponse.directory.issuer
 
-      response.kind_of?(Array) ? response.map { |b| [b.issuername, b.issuerid] } : [response.issuername, response.issuerid]
+      response.kind_of?(Array) ? response.map { |b| [b.issuername, b.issuerid] } : [[response.issuername, response.issuerid]]
     end
 
     ## Setup a transaction
