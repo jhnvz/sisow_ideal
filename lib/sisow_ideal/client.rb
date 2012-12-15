@@ -35,7 +35,7 @@ module SisowIdeal
 
       response = Hashie::Mash.new(
         self.class.get('/TransactionRequest',
-        :query  => merge_query(options, sha1),
+        :query  => merge_options(options, sha1),
         :format => :xml
       ).parsed_response)
 
@@ -61,7 +61,7 @@ module SisowIdeal
 
       response = Hashie::Mash.new(
         self.class.get('/StatusRequest',
-        :query  => merge_query(options, sha1),
+        :query  => merge_options(options, sha1),
         :format => :xml
       ).parsed_response)
 
@@ -72,10 +72,22 @@ module SisowIdeal
       end
     end
 
+    def valid_response?(params)
+      sha1 = [
+        params.fetch(:trxid),
+        params.fetch(:ec),
+        params.fetch(:status),
+        @options.fetch(:merchantid),
+        @options.fetch(:merchantkey)
+      ].join
+
+      Digest::SHA1.hexdigest(sha1) == params[:sha1]
+    end
+
     private
 
       # Merge options in query
-      def merge_query(hash, sha1)
+      def merge_options(hash, sha1)
         @options.merge!(hash).merge!(:sha1 => Digest::SHA1.hexdigest(sha1))
       end
 

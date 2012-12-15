@@ -71,5 +71,37 @@ describe SisowIdeal::Client do
 
   end
 
+  describe :valid_response? do
+
+    subject { @client.valid_response?(params) }
+
+    context 'invalid' do
+
+      let!(:params) { {
+        :trxid  => '0050001157723256',
+        :ec     => '123',
+        :status => 'Open',
+        :sha1   => 'f334d33574f5b9244f8e434a7e4bc3cee12f6284'
+      } }
+
+      it { subject.should be_false }
+
+    end
+
+    context 'valid' do
+
+      let!(:params) { {
+        :trxid  => '0050001157723256',
+        :ec     => '1',
+        :status => 'Open',
+        :sha1   => 'f334d33574f5b9244f8e434a7e4bc3cee12f6284'
+      } }
+
+      it { subject.should be_true }
+
+    end
+
+  end
+
 
 end
