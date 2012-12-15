@@ -35,14 +35,23 @@ response = client.setup_transaction(
 order.update_attributes(:trxid => response.trxid)
 redirect_to response.url
 
-# How to handle report on the report url
+# How to handle report on the notifyurl
 # For safety reasons sisow calls a notify url for updating payment status before redirecting back to the application
+
+# You have 2 options:
+# 1. Do a status request
 order = Order.find_by_trxid(params[:trxid])
 response = client.status_request(
   :trxid  => order.trxid,
   :shopid => '1'
 )
 order.update_attributes(:status => response.status)
+
+# 2. Validate the response
+if client.valid_response?(params)
+  order = Order.find_by_trxid(params[:trxid])
+  order.update_attributes(:status => params[:status])
+end
 
 # When sisow redirects the user back you can check if the payment was succesfull bij finding the order object
 @order = Order.find_by_trxid(params[:trxid])
